@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kh8-dh-IgU">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="iBC-5u-8ao">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="kh8-dh-IgU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LUd-Zn-5d4">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YZv-Zl-Voe" kind="relationship" relationship="rootViewController" id="NSw-3r-CZ5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yCg-9p-cYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-626" y="31"/>
+        </scene>
+        <!--Main View Controller - Air Browser-->
+        <scene sceneID="Ixe-pc-m0A">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="YZv-Zl-Voe" customClass="MainViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Kgl-TC-xgX">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MME-IK-SIK">
+                            <size key="itemSize" width="59" height="75"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="6RF-u0-yrP">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" red="0.21019178190000001" green="0.4715920804" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="app_cell" id="8Ta-DD-c7p">
+                                <rect key="frame" x="0.0" y="0.0" width="59" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="59" height="75"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" restorationIdentifier="cell_icon" id="XmG-Cb-nZg">
+                                            <rect key="frame" x="0.0" y="1" width="59" height="59"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="20" contentMode="left" restorationIdentifier="cell_name" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2rr-QY-C0U">
+                                            <rect key="frame" x="0.0" y="60" width="59" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="AqC-Vu-r1K" kind="modal" identifier="open_app" modalTransitionStyle="flipHorizontal" id="hVg-94-hYf"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="YZv-Zl-Voe" id="uKs-0u-fNY"/>
+                            <outlet property="delegate" destination="YZv-Zl-Voe" id="jg1-27-VXb"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Air Browser" id="CrE-FR-2Zn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="YZ9-K2-5kl">
+                            <connections>
+                                <action selector="refreshConnection:" destination="YZv-Zl-Voe" id="i8z-ty-DTB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+                    <connections>
+                        <outlet property="btReload" destination="YZ9-K2-5kl" id="75W-oB-cPe"/>
+                        <outlet property="ld_apps" destination="6RF-u0-yrP" id="vOa-wO-atA"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ekH-3h-pKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175" y="31"/>
+        </scene>
+        <!--App View Controller-->
+        <scene sceneID="1G9-Fa-LB8">
+            <objects>
+                <viewController id="AqC-Vu-r1K" customClass="AppViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xeH-9U-roz">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" id="Jxo-mH-s8U">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bCk-nq-DUa">
+                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="&lt;" id="kiE-yY-ao4">
+                                        <connections>
+                                            <action selector="goBack:" destination="AqC-Vu-r1K" id="pu1-Sa-3mO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title=">" id="Irx-Q2-S5Z">
+                                        <connections>
+                                            <action selector="goFoward:" destination="AqC-Vu-r1K" id="Qg3-m5-2Q1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2uk-FQ-rTX"/>
+                                    <barButtonItem systemItem="refresh" id="cB4-qM-sIK">
+                                        <connections>
+                                            <action selector="refreshAction:" destination="AqC-Vu-r1K" id="pq0-ek-gfk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="X" id="hlI-aa-Uh6">
+                                        <color key="tintColor" red="0.63193558673469385" green="0.12566208041994978" blue="0.084474892864275966" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="close:" destination="AqC-Vu-r1K" id="XzV-vG-asc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="4jj-Kp-OP5">
+                                <rect key="frame" x="142" y="189" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.21019178190000001" green="0.4715920804" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="8hE-NZ-IoV"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="btBack" destination="kiE-yY-ao4" id="g4r-eM-e2C"/>
+                        <outlet property="btFoward" destination="Irx-Q2-S5Z" id="Nkm-ju-C5F"/>
+                        <outlet property="ltLoading" destination="4jj-Kp-OP5" id="h5g-uU-kjD"/>
+                        <outlet property="navigationBar" destination="8hE-NZ-IoV" id="meE-JO-xyl"/>
+                        <outlet property="searchDisplayController" destination="e3k-IH-eq2" id="E0L-mU-Fjt"/>
+                        <outlet property="toolBar" destination="bCk-nq-DUa" id="slm-8o-2fW"/>
+                        <outlet property="webContent" destination="Jxo-mH-s8U" id="g9Q-Tl-CYE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NAm-mS-RUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="e3k-IH-eq2">
+                    <connections>
+                        <outlet property="delegate" destination="AqC-Vu-r1K" id="wEz-lr-u6r"/>
+                        <outlet property="searchContentsController" destination="AqC-Vu-r1K" id="hmY-sE-FR7"/>
+                        <outlet property="searchResultsDataSource" destination="AqC-Vu-r1K" id="5h9-1r-m8B"/>
+                        <outlet property="searchResultsDelegate" destination="AqC-Vu-r1K" id="75d-fo-tR5"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="301" y="31"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="AppViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:"/>
+                <relationship kind="action" name="goBack:"/>
+                <relationship kind="action" name="goFoward:"/>
+                <relationship kind="action" name="refreshAction:"/>
+                <relationship kind="outlet" name="btBack" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btFoward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="ltLoading" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webContent" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refreshConnection:"/>
+                <relationship kind="outlet" name="btReload" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="ld_apps" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
