@@ -96,43 +96,75 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="Jxo-mH-s8U">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bCk-nq-DUa">
-                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="&lt;" id="kiE-yY-ao4">
-                                        <connections>
-                                            <action selector="goBack:" destination="AqC-Vu-r1K" id="pu1-Sa-3mO"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title=">" id="Irx-Q2-S5Z">
-                                        <connections>
-                                            <action selector="goFoward:" destination="AqC-Vu-r1K" id="Qg3-m5-2Q1"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2uk-FQ-rTX"/>
-                                    <barButtonItem systemItem="refresh" id="cB4-qM-sIK">
-                                        <connections>
-                                            <action selector="refreshAction:" destination="AqC-Vu-r1K" id="pq0-ek-gfk"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem title="X" id="hlI-aa-Uh6">
-                                        <color key="tintColor" red="0.63193558673469385" green="0.12566208041994978" blue="0.084474892864275966" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="close:" destination="AqC-Vu-r1K" id="XzV-vG-asc"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" animating="YES" style="whiteLarge" id="4jj-Kp-OP5">
-                                <rect key="frame" x="142" y="189" width="37" height="37"/>
+                                <rect key="frame" x="142" y="211" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.21019178190000001" green="0.4715920804" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <button opaque="NO" alpha="0.70000000000000007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Jp-VV-6Tk">
+                                <rect key="frame" x="267" y="417" width="33" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="x">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="AqC-Vu-r1K" eventType="touchUpInside" id="f24-BR-rQg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.70000000000000007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UM2-T9-uTe">
+                                <rect key="frame" x="20" y="417" width="33" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="AqC-Vu-r1K" eventType="touchUpInside" id="bGb-5A-d29"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.70000000000000007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wKk-qg-jMe">
+                                <rect key="frame" x="68" y="417" width="33" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title=">">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goFoward:" destination="AqC-Vu-r1K" eventType="touchUpInside" id="KGF-tR-GBm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.70000000000000007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zz3-Iq-dqD">
+                                <rect key="frame" x="224" y="417" width="35" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="u">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshAction:" destination="AqC-Vu-r1K" eventType="touchUpInside" id="Uvd-i0-r6p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -141,12 +173,11 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="btBack" destination="kiE-yY-ao4" id="g4r-eM-e2C"/>
-                        <outlet property="btFoward" destination="Irx-Q2-S5Z" id="Nkm-ju-C5F"/>
+                        <outlet property="btBack" destination="UM2-T9-uTe" id="hFV-Pf-xBA"/>
+                        <outlet property="btFoward" destination="wKk-qg-jMe" id="vUx-m9-K3e"/>
                         <outlet property="ltLoading" destination="4jj-Kp-OP5" id="h5g-uU-kjD"/>
                         <outlet property="navigationBar" destination="8hE-NZ-IoV" id="meE-JO-xyl"/>
                         <outlet property="searchDisplayController" destination="e3k-IH-eq2" id="E0L-mU-Fjt"/>
-                        <outlet property="toolBar" destination="bCk-nq-DUa" id="slm-8o-2fW"/>
                         <outlet property="webContent" destination="Jxo-mH-s8U" id="g9Q-Tl-CYE"/>
                     </connections>
                 </viewController>
@@ -171,11 +202,10 @@
                 <relationship kind="action" name="goBack:"/>
                 <relationship kind="action" name="goFoward:"/>
                 <relationship kind="action" name="refreshAction:"/>
-                <relationship kind="outlet" name="btBack" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="btFoward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btBack" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btFoward" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="ltLoading" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="navigationBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="webContent" candidateClass="UIWebView"/>
             </relationships>
         </class>
@@ -198,6 +228,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
